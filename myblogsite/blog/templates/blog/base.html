@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>Blog</title>
+
+	<!-- BOOTSTRAP -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<!-- Alternative to Bootstrap 3 Glyphicons -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- MEDIUM -->
+	<script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
+
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
+
+	<!-- GOOGLE FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Russo+One&display=swap" rel="stylesheet">
+
+</head>
+	<body class="loader">
+
+		<nav class="navbar navbar-expand-lg bg-light techfont">
+			<div class="container">
+				<ul class="navbar-nav align-items-center">
+					<li><a class="navbar-brand bigbrand" href="{% url 'post_list' %}">My Blog</a></li>
+					<li><a href="{% url 'about' %}">About</a></li>
+					<li><a href="https://www.github.com">Github</a></li>
+					<li><a href="https://www.LinkedIn.com">LinkedIn</a></li>
+				</ul>
+				<ul class="navbar-nav align-items-center ml-auto">
+					{% if user.is_authenticated %}
+						<li><a href="{% url 'post_new' %}">New Post</a></li>
+						<li><a href="{% url 'post_draft_list' %}">Drafts</a></li>
+						<li><a href="{% url 'logout' %}">Log Out</a></li>
+						<li><a>Welcome: {{user.username}}</a></li>
+					{% else %}
+						<li>
+							<a class="nav-item nav-link" href="{% url 'login' %}" aria-label="Login">
+							<span class="fa fa-user" aria-hidden="true"></span></a>
+						</li>
+					{% endif%}	
+				</ul>
+			</div>
+		</nav>
+
+		<div class="content container">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="blog_posts">
+						{% block content %}
+						{% endblock %}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="{% static 'js/blog.js' %}"></script>
+	</body>
+</html>
