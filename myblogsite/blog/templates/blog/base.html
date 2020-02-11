@@ -27,19 +27,19 @@
 			<div class="container">
 				<ul class="navbar-nav align-items-center">
 					<li><a class="navbar-brand bigbrand" href="{% url 'post_list' %}">My Blog</a></li>
-					<li><a href="{% url 'about' %}">About</a></li>
-					<li><a href="https://www.github.com">Github</a></li>
-					<li><a href="https://www.LinkedIn.com">LinkedIn</a></li>
+					<li><a class="nav-item nav-link" href="{% url 'about' %}">About</a></li>
+					<li><a class="nav-item nav-link" href="https://www.github.com">Github</a></li>
+					<li><a class="nav-item nav-link" href="https://www.LinkedIn.com">LinkedIn</a></li>
 				</ul>
 				<ul class="navbar-nav align-items-center ml-auto">
 					{% if user.is_authenticated %}
-						<li><a href="{% url 'post_new' %}">New Post</a></li>
-						<li><a href="{% url 'post_draft_list' %}">Drafts</a></li>
-						<li><a href="{% url 'logout' %}">Log Out</a></li>
-						<li><a>Welcome: {{user.username}}</a></li>
+						<li><a class="nav-item nav-link" href="{% url 'post_new' %}">New Post</a></li>
+						<li><a class="nav-item nav-link" href="{% url 'post_draft_list' %}">Drafts</a></li>
+						<li><a class="nav-item nav-link" href="{% url 'logout' %}">Log Out</a></li>
+						<li><a>{{user.username}}</a></li>
 					{% else %}
 						<li>
-							<a class="nav-item nav-link" href="{% url 'login' %}" aria-label="Login">
+							<a class="nav-item nav-link" class="nav-item nav-link" href="{% url 'login' %}" aria-label="Login">
 							<span class="fa fa-user" aria-hidden="true"></span></a>
 						</li>
 					{% endif%}	
