@@ -24,13 +24,13 @@ class PostDetailView(DetailView):
 
 class CreatePostView(LoginRequiredMixin, CreateView):
 	login_url = '/login/'
-	redcirect_field_name = 'blog/post_detail.html'
+	redirect_field_name = 'blog/post_detail.html'
 	form_class = PostForm
 	model = Post
 
 class PostUpdateView(LoginRequiredMixin, UpdateView):
 	login_url = '/login/'
-	redcirect_field_name = 'blog/post_detail.html'
+	redirect_field_name = 'blog/post_detail.html'
 	form_class = PostForm
 	model = Post
 
@@ -40,7 +40,7 @@ class PostDeleteView(LoginRequiredMixin, DeleteView):
 
 class DraftListView(LoginRequiredMixin, ListView):
 	login_url = '/login/'
-	redcirect_field_name = 'blog/post_list.html'
+	redirect_field_name = 'blog/post_list.html'
 	model = Post
 
 	def get_queryset(self):
@@ -50,7 +50,7 @@ class DraftListView(LoginRequiredMixin, ListView):
 
 
 @login_required
-def add_comment_to_post(request,pk):
+def add_comment_to_post(request, pk):
 	post = get_object_or_404(Post, pk=pk)
 	if request.method == 'POST':
 		form = CommentForm(request.POST)
@@ -61,10 +61,10 @@ def add_comment_to_post(request,pk):
 			return redirect('post_detail', pk=post.pk)
 	else:
 		form = CommentForm()
-	return render(request, 'blog/comment_form.html',{'form':form})
+	return render(request, 'blog/comment_form.html', {'form': form})
 
 @login_required
-def post_publish(request,pk):
+def post_publish(request, pk):
 	post = get_object_or_404(Post,pk=pk)
 	post.publish()
 	return redirect('post_detail',pk=pk)
