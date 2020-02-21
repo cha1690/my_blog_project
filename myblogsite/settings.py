@@ -128,7 +128,7 @@ LOGIN_REDIRECT_URL = '/'
 django_heroku.settings(locals())
 
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 import dj_database_url
 prod_db  =  dj_database_url.config(conn_max_age=500)
