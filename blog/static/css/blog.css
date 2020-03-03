@@ -1,9 +1,4 @@
-.techfont{
-  font-family: 'Russo One', sans-serif;
-  font-size: 1.5em;
-  margin: 10px;
-  /*font-family: 'Montserrat', sans-serif;*/
-}
+
 
 .bigbrand{
   font-size: 1.5em;
@@ -44,32 +39,32 @@
 
 
 
-@keyframes spinify {
-  0% {
-    transform: translate(0px,0px);
-    
-  }
-  33% {
-    transform: translate(0px,24px);
-    border-radius:100%;
-    width:10px;
-    height:10px;
- 
-  }
-   66% {
-    transform:translate(0px,-16px);
-  }
-  
-   88% {
-    transform:translate(0px,4px);
-     
-  }
-  100% {
-    transform:translate(0px,0px);
-  }
-}
-@keyframes hue{
-  0%{filter: hue-rotate(0deg);}
-  100%{filter:hue-rotate(360deg);}
-  
-}
+/*@keyframes spinify {*/
+/*  0% {*/
+/*    transform: translate(0px,0px);*/
+/*    */
+/*  }*/
+/*  33% {*/
+/*    transform: translate(0px,24px);*/
+/*    border-radius:100%;*/
+/*    width:10px;*/
+/*    height:10px;*/
+/* */
+/*  }*/
+/*   66% {*/
+/*    transform:translate(0px,-16px);*/
+/*  }*/
+/*  */
+/*   88% {*/
+/*    transform:translate(0px,4px);*/
+/*     */
+/*  }*/
+/*  100% {*/
+/*    transform:translate(0px,0px);*/
+/*  }*/
+/*}*/
+/*@keyframes hue{*/
+/*  0%{filter: hue-rotate(0deg);}*/
+/*  100%{filter:hue-rotate(360deg);}*/
+/*  */
+/*}*/
