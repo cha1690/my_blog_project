@@ -1,0 +1,30 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<div class="container">
+    <h1 class="posttitle">{{ post.title }}</h1>
+    <!-- safe tag translates the text to show without the tag content on the html page -->
+
+    <a class="btn btn-primary btn-comment" href="{% url 'add_comment_to_post' pk=post.pk %}">Add Comment</a>
+
+    <div class="container">
+        {% for comment in post.comments.all %}
+        <br>
+        {% if user.is_authenticated or comment.approved_comment %}
+         <p>{{comment.author}}</p>
+         <p class="text-muted"> {{comment.created_date}} </p>
+        {% if not comment.approved_comment %}
+        <a class="btn btn-primary" href="{% url 'comment_remove' pk=comment.pk %}"><span
+                class="fa fa-remove"></span></a>
+        <a class="btn btn-primary" href="{% url 'comment_approve' pk=comment.pk %}"><span
+                class="fa fa-check"></span></a>
+        {% endif %}
+
+        <p>{{comment.text|safe|linebreaks}}</p>
+
+        {% endif %}
+        {% empty %}
+        <p>No Comments! </p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
