@@ -1,72 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Crimson+Pro|Michroma&display=swap');
 
-
-.bigbrand{
+.navbar-brand{
   font-size: 1.5em;
-}
-
-.centerstage{
-  margin-left: auto;
-  margin-right: auto;
+  font-family: 'Montserrat Subrayada', sans-serif;
+  letter-spacing: 1px;
 }
 
 
-.loader {
-  filter:hue-rotate(0deg);
-  color:linear-gradient(45deg,#0f8,#08f);
-  animation:hue 10000ms infinite linear;
+.card-title{
+  font-family: 'Michroma', sans-serif;
+  font-size:40px;
+  margin-bottom: 0px;
+  color: black;
 }
 
-.postdate{
-  text-align: center;
+.far {
+  color: black;
 }
 
-.posttitle{
-  font-family: 'Russo One', sans-serif;
-  font-size: 3em;
-  text-align: center;
+.row{
+  margin: 15px;
 }
 
+.posttitle loader{
+  font-family: 'Michroma', sans-serif;
+  font-size:40px;
+}
 
 .postcontent{
-  font-family: 'Montserrat';
-  font-size: 1.5em;
+  font-family: 'Crimson Pro', serif;
+  font-size:32px;
 }
 
-.btn-comment{
-  position: absolute;
-  right: 0px;
+.btn{
+  font-family: 'Crimson Pro', serif;
+
 }
 
 
+.card-footer {
+  font-family: 'Crimson Pro', serif;
+  font-size: 16px;
+}
 
-/*@keyframes spinify {*/
-/*  0% {*/
-/*    transform: translate(0px,0px);*/
-/*    */
-/*  }*/
-/*  33% {*/
-/*    transform: translate(0px,24px);*/
-/*    border-radius:100%;*/
-/*    width:10px;*/
-/*    height:10px;*/
-/* */
-/*  }*/
-/*   66% {*/
-/*    transform:translate(0px,-16px);*/
-/*  }*/
-/*  */
-/*   88% {*/
-/*    transform:translate(0px,4px);*/
-/*     */
-/*  }*/
-/*  100% {*/
-/*    transform:translate(0px,0px);*
-
-/*  }*/
-/*}*/
-/*@keyframes hue{*/
-/*  0%{filter: hue-rotate(0deg);}*/
-/*  100%{filter:hue-rotate(360deg);}*/
-/*  */
-/*}*/
 
