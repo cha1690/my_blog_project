@@ -19,13 +19,12 @@
 
     <hr>
     <a class="btn btn-primary btn-comment" href="{% url 'add_comment_to_post' pk=post.pk %}">Add Comment</a>
-    <a class="btn btn-primary" href="{% url 'post_publish' pk=post.pk %}">See Responses</a>
 </div>
-
+<br>
 <div class="container">
     {% for comment in post.comments.all %}
     {% if user.is_authenticated or comment.approved_comment %}
-    <p class="comment-text">{{comment.author}}</p>
+    <p class="comment-author">{{comment.author}}</p>
     <p class="text-muted"> {{comment.created_date}} </p>
     {% if not comment.approved_comment %}
     <a class="btn btn-primary" href="{% url 'comment_remove' pk=comment.pk %}"><span
