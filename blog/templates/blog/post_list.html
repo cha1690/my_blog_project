@@ -11,7 +11,7 @@
                     <div class="views">{{ post.published_date |date:"D, d M, Y" }}</div>
                     <div class="stats">
                         <i class="far fa-comment-alt">
-                            <a href="{% url 'post_detail' pk=post.pk %}">
+                            <a class='comment-list' href="{% url 'post_detail' pk=post.pk %}">
                                 Comments: {{post.approve_comments.count}}
                             </a>
                         </i>
