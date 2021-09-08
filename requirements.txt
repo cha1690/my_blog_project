@@ -11,7 +11,7 @@ django-heroku==0.3.1
 Faker==3.0.0
 gunicorn==20.0.4
 misaka==2.1.1
-Pillow==7.0.0
+Pillow==8.3.2
 psycopg2==2.7.5
 psycopg2-binary==2.8.4
 pycparser==2.19
